@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,6 +15,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+// Fetch Type of this class' variable "courses"
+// is set to "Eager"
+// @OneToMany(fetch=FetchType.EAGER)
+// find the variable "courses" below and look at it
 @Entity
 @Table(name="instructor")
 public class Instructor {
@@ -38,7 +43,10 @@ public class Instructor {
 	@JoinColumn(name="instructor_detail_id")
 	private InstructorDetail instructorDetailId;
 	
-	@OneToMany(mappedBy="instructorId", 
+	// setting Fetch Type to EAGER (eager loading)
+	// this fetch type makes it so the instructor is loaded
+	// along with all of his courses
+	@OneToMany(fetch=FetchType.EAGER, mappedBy="instructorId", 
 			cascade = {CascadeType.DETACH,CascadeType.MERGE,
 					CascadeType.PERSIST,CascadeType.REFRESH,})
 	private List<Course> courses;
