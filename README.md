@@ -1,25 +1,20 @@
-# hibernate-tutorial-4-eager-loading(fetch)
-
-When you download this project, make sure to also download this project:
-	- hibernate-tutorial-4-lazy-loading(fetch)
-	
-In one project we explain EAGER Loading
-In the other one we explain LAZY Loading
+# hibernate-tutorial-3-one-to-many-mapping
 
 ---I. Project Purpose ----------------------------------------------------------------------------------- 
 	
-	- The project is based on Section 25 from the Udemy course
+	- The project is based on Section 24 from the Udemy course
 	 Spring & Hibernate for Beginners (includes Spring Boot) by Chad Darby
 	 
 	- In this section we learn about:
-		- Eager vs Lazy Loading 
-				examples: @OneToMany(fetch=FetchType.LAZY)
-					  @OneToMany(fetch=FetchType.EAGER)	
-					  Does not have to be @OneToMany, you can also use @OneToOne, @ManyToOne
-		- Hibernate Fetching Strategies (HQL Query that retrieves objects from the Table, even after session is closed)
+	- @OneToMany mapping
+	- @ManyToOne mapping
+	- How to properly save a Parent Item and it's Children (check "CreateNewRowsInTablesDemo.java" for more details)
+		- Use "session.save()" when working with "cascade=CascadeType.ALL"
+		- Use "session.persist()" when working with specified cascade types
+			example: cascade={CascadeType.DETACH,CascadeType.MERGE, CascadeType.PERSIST,CascadeType.REFRESH}
 	
-	- Section 25 as of the time of making this project is:
-    	Section 25: Hibernate Advanced Mappings - Eager vs Lazy Loading
+	- Section 24 as of the time of making this project is:
+    	Section 24: Hibernate Advanced Mappings - @OneToMany
 	
 ---II. Project requires:---------------------------------------------------------------------------------------
 	
