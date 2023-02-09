@@ -35,6 +35,7 @@ public class CreateNewRowsInTablesDemo {
 		Course course4 = new Course("yoga course with nina ^.^");
 		
 		instructor.setInstructorDetail(instructorDetail);
+		
 		instructor.addCourse(course1);
 		instructor.addCourse(course2);
 		instructor.addCourse(course3);
